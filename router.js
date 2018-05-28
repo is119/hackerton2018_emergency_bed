@@ -17,19 +17,19 @@ button3.mode('in')
 button4.mode('in')
 
 function check_event(){
-    if(button1.value() == false){
+    if(button1.value()){
         pin1.value(!pin1.value())
         console.log("pin1 pochit")
     }
-        if(button2.value() == false){
+        if(button2.value()){
         pin2.value(!pin2.value())
         console.log("pin2 pochit")
     }
-    if(button3.value() == false){
+    if(button3.value()){
         pin3.value(!pin3.value())
         console.log("pin3 pochit")
     }
-    if(button4.value() == false){
+    if(button4.value()){
         pin4.value(!pin4.value())
         console.log("pin4 pochit")
     }
