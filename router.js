@@ -16,24 +16,30 @@ button2.mode('in')
 button3.mode('in')
 button4.mode('in')
 
-exports.init = function(server){
-    button1.on('fall', function(){
+function check_event(){
+    if(button1.value() == false){
         pin1.value(!pin1.value())
         console.log("pin1 pochit")
-    
-    })
-    button2.on('fall', function(){
+    }
+        if(button2.value() == false){
         pin2.value(!pin2.value())
         console.log("pin2 pochit")
-    })
-    button3.on('fall', function(){
+    }
+    if(button3.value() == false){
         pin3.value(!pin3.value())
         console.log("pin3 pochit")
-    })
-    button4.on('fall', function(){
-        pin3.value(!pin3.value())
+    }
+    if(button4.value() == false){
+        pin4.value(!pin4.value())
         console.log("pin4 pochit")
-    })
+    }
+}
+
+exports.init = function(server){
+    button1.on('fall', check_event)
+    button2.on('fall', check_event)
+    button3.on('fall', check_event)
+    button4.on('fall', check_event)
     server.get('/', function (req, res) {
         msg = `${button1.value(),button2.value(),button3.value(),button4.value()}`
         res.send("Hello World!");
