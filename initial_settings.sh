@@ -1,5 +1,16 @@
 #!/bin/bash
 
+
+echo "121" > "/sys/class/gpio/unexport"
+echo "122" > "/sys/class/gpio/unexport"
+echo "123" > "/sys/class/gpio/unexport"
+echo "124" > "/sys/class/gpio/unexport"
+echo "125" > "/sys/class/gpio/unexport"
+echo "126" > "/sys/class/gpio/unexport"
+echo "127" > "/sys/class/gpio/unexport"
+echo "129" > "/sys/class/gpio/unexport"
+
+
 echo "121" > "/sys/class/gpio/export"
 echo "122" > "/sys/class/gpio/export"
 echo "123" > "/sys/class/gpio/export"
