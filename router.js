@@ -18,46 +18,22 @@ button4.mode('in')
 
 exports.init = function(server){
     button1.on('fall', function(){
-        console.log("btn1 pressed")
-        if(pin1.value()){ // true = high
-            pin1.mode('low');
-            console.log('pin1 low');
-        } else{
-            pin1.mode('high');
-            console.log('pin1 high');
-        }
+        pin1.value(!pin1.value())
+        console.log("pin1 pochit")
+    
     })
     button2.on('fall', function(){
-        console.log("btn2 pressed")
-        if(pin2.value()){ // true = high
-            pin2.mode('low');
-            console.log('pin2 low');
-        } else{
-            pin2.mode('high');
-            console.log('pin2 high');
-        }
+        pin2.value(!pin2.value())
+        console.log("pin2 pochit")
     })
     button3.on('fall', function(){
-        console.log("btn3 pressed")
-        if(pin3.value()){ // true = high
-            pin3.mode('low');
-            console.log('pin3 low');
-        } else{
-            pin3.mode('high');
-            console.log('pin3 high');
-        }
+        pin3.value(!pin3.value())
+        console.log("pin3 pochit")
     })
     button4.on('fall', function(){
-        console.log("btn4 pressed")
-        if(pin4.value()){ // true = high
-            pin4.mode('low');
-            console.log('pin4 low');
-        } else{
-            pin4.mode('high');
-            console.log('pin4 high');
-        }
+        pin3.value(!pin3.value())
+        console.log("pin4 pochit")
     })
-
     server.get('/', function (req, res) {
         msg = `${button1.value(),button2.value(),button3.value(),button4.value()}`
         res.send("Hello World!");
