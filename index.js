@@ -1,15 +1,15 @@
-let express = require('express');
-let https = require('https');
-let fs = require('fs');
-let sslOptions = {
+var express = require('express');
+var https = require('https');
+var fs = require('fs');
+var sslOptions = {
     key: fs.readFileSync('key.pem'),
     cert: fs.readFileSync('cert.pem')
 };
 
-let app = express();
+var app = express();
 
-let router = require('./router.js')
+var router = require('./router.js')
 
-let server = router.init(app);
+var server = router.init(app);
 
 https.createServer(sslOptions, server).listen(8443);

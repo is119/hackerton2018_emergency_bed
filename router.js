@@ -16,18 +16,46 @@ button2.mode('in')
 button3.mode('in')
 button4.mode('in')
 
-exports.init = (server)=>{
+exports.init = function(server){
     button1.on('fall', function(){
-        pin1.mode(!pin1.value())
+        console.log("btn1 pressed")
+        if(pin1.value()){ // true = high
+            pin1.mode('low');
+            console.log('pin1 low');
+        } else{
+            pin1.mode('high');
+            console.log('pin1 high');
+        }
     })
     button2.on('fall', function(){
-        pin2.mode(!pin2.value())    
+        console.log("btn2 pressed")
+        if(pin2.value()){ // true = high
+            pin2.mode('low');
+            console.log('pin2 low');
+        } else{
+            pin2.mode('high');
+            console.log('pin2 high');
+        }
     })
     button3.on('fall', function(){
-        pin3.mode(!pin3.value())    
+        console.log("btn3 pressed")
+        if(pin3.value()){ // true = high
+            pin3.mode('low');
+            console.log('pin3 low');
+        } else{
+            pin3.mode('high');
+            console.log('pin3 high');
+        }
     })
     button4.on('fall', function(){
-        pin4.mode(!pin4.value())    
+        console.log("btn4 pressed")
+        if(pin4.value()){ // true = high
+            pin4.mode('low');
+            console.log('pin4 low');
+        } else{
+            pin4.mode('high');
+            console.log('pin4 high');
+        }
     })
 
     server.get('/', function (req, res) {
