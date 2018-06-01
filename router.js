@@ -15,6 +15,26 @@ button1.mode('in')
 button2.mode('in')
 button3.mode('in')
 button4.mode('in')
+
+let moment = require('moment')
+let cardName = "admin@hackerton-network"
+
+let composer = require('composer-client');
+let BusinessNetworkConnection = composer.BusinessNetworkConnection;
+
+let connection = new BusinessNetworkConnection();
+let definition = "";
+let factory = definition.getFactory();
+
+businessNetworkConnection.on('event', (event) => {
+    // event: { "$class": "org.namespace.BasicEvent", "eventId": "0000-0000-0000-000000#0" }
+    if(event.$class = "org.hackerton.EmergencyBedOccupied"){
+        if() // BedID가 자신의 ID인지 알 필요 있음
+    }
+    console.log(event);
+});
+
+
 function btn1_on(){
     pin1.value(!pin1.value())
     console.log("pin1 pochit")
