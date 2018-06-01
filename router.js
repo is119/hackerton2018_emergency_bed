@@ -15,31 +15,28 @@ button1.mode('in')
 button2.mode('in')
 button3.mode('in')
 button4.mode('in')
-
-function check_event(){
-    if(button1.value()){
-        pin1.value(!pin1.value())
-        console.log("pin1 pochit")
-    }
-        if(button2.value()){
-        pin2.value(!pin2.value())
-        console.log("pin2 pochit")
-    }
-    if(button3.value()){
-        pin3.value(!pin3.value())
-        console.log("pin3 pochit")
-    }
-    if(button4.value()){
-        pin4.value(!pin4.value())
-        console.log("pin4 pochit")
-    }
+function btn1_on(){
+    pin1.value(!pin1.value())
+    console.log("pin1 pochit")
+}
+function btn2_on(){
+    pin2.value(!pin2.value())
+    console.log("pin2 pochit")
+}
+function btn3_on(){
+    pin3.value(!pin3.value())
+    console.log("pin3 pochit")
+}
+function btn4_on(){
+    pin4.value(!pin4.value())
+    console.log("pin4 pochit")
 }
 
 exports.init = function(server){
-    button1.on('fall', check_event)
-    button2.on('fall', check_event)
-    button3.on('fall', check_event)
-    button4.on('fall', check_event)
+    button1.on('fall', btn1_on)
+    button2.on('fall', btn2_on)
+    button3.on('fall', btn3_on)
+    button4.on('fall', btn4_on)
     server.get('/', function (req, res) {
         msg = `${button1.value(),button2.value(),button3.value(),button4.value()}`
         res.send("Hello World!");
